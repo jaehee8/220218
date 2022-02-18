@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>modal</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <nav>
+    <button id="close">close</button>
+    <ul>
+      <li>1</li>
+      <li>2</li>
+      <li>3</li>
+      <li>4</li>
+      <li>5</li>
+    </ul>
+    <div id="modal"></div>
+  </nav>
+  
+  <div id="container">
+
+    <h1>title</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates labore ab accusamus obcaecati quas, esse, minus molestias omnis veritatis provident sequi maxime atque rerum sapiente harum dolor voluptatem exercitationem corrupti!</p>
+  </div>
+  
+  <script>
+    const closeEle = document.querySelector('#close');
+    const modal = document.querySelector("#modal");
+    const container = document.querySelector("#container");
+
+    
+    closeEle.addEventListener('click', function(){
+      closeEle.style.diplay = 'none';
+      modal.style.diplay = 'none';
+    });
+
+
+  </script>
+</body>
+</html>
