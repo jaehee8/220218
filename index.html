@@ -8,15 +8,26 @@
   <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-  <nav>
+  <nav id="menu">
     <button id="close">close</button>
     <ul>
-      <li>1</li>
-      <li>2</li>
-      <li>3</li>
-      <li>4</li>
-      <li>5</li>
+      <!-- 
+        data-order  사용자 정의 데이터셋
+        data - 사용자가 네임을 정해주고 순서를 지정해주는..
+      -->
+      <li data-order="1">1</li>
+      <li data-order="2">2</li>
+      <li data-order="3">3</li>
+      <li data-order="4">4</li>
+      <li data-order="5">5</li>
     </ul>
+    <div id="test">
+      <div data-order="1">test-1</div>
+      <div data-order="2">test-2</div>
+      <div data-order="3">test-3</div>
+      <div data-order="4">test-4</div>
+      <div data-order="5">test-5</div>
+    </div>
     <div id="modal"></div>
   </nav>
   
@@ -30,13 +41,31 @@
     const closeEle = document.querySelector('#close');
     const modal = document.querySelector("#modal");
     const container = document.querySelector("#container");
+    const nav = document.querySelector('nav');
 
-    
+    //modal 기능은 이것으로 완료
     closeEle.addEventListener('click', function(){
-      closeEle.style.diplay = 'none';
-      modal.style.diplay = 'none';
+      nav.style.display = 'none';
+      
     });
 
+
+    const ulLi =document.querySelector('#menu ul');
+    console.log(ulLi);
+    const test =document.querySelector('#menu #test');
+    console.log(test);
+
+    ulLi.addEventListener('click', function(event){
+      console.log(event.target);
+      console.dir(event.target);
+      let li = event.target;
+      console.log(li.dataset.order);
+
+      if(li.dataset.order === '1') {
+        let getIndex = Number(li.dataset.order); //문자 --> 숫자로 바뀜
+        test.children[getIndex-1].style.color ='blue';
+      }
+    });
 
   </script>
 </body>

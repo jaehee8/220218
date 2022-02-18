@@ -10,6 +10,22 @@ nav {
     left: 50%;
     z-index: 2;
   }
+  ul {
+    position: absolute;
+    top: 50%;
+    left: 30%;
+    color: black;
+    z-index: 3;
+    li:hover {
+      color: red;
+    }
+  }
+  #test {
+    position: absolute;
+    z-index: 3;
+    top: 50%;
+    left: 70%;
+  }
   #modal {
     width: 100vw;
     height: 100vh;
