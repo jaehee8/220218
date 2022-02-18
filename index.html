@@ -64,8 +64,11 @@
       let order = Number(event.target.dataset.order);
       // 데이터 자료 형변환 --> 문자열 --> 숫자로 바꾸는 개녕
       // 숫자로 바꾸면 사칙연산이 가능하기 떄문
+      // 어떤 속성을 찾고있다. (내가 만든 속성(attribute))
+      // 값을 가공 / 문자열에서 숫자로 가공해서 사칙연산
 
       test.children[order-1].style.color = 'blue';
+      // 활용
     });
 
   </script>
