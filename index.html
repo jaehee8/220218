@@ -57,14 +57,15 @@
 
     ulLi.addEventListener('click', function(event){
       console.log(event.target);
-      console.dir(event.target);
-      let li = event.target;
-      console.log(li.dataset.order);
+      console.dir(event.target); //dataset 찾음
+      console.log(event.target.dataset.order);
+      console.log(typeof event.target.dataset.order);
 
-      if(li.dataset.order === '1') {
-        let getIndex = Number(li.dataset.order); //문자 --> 숫자로 바뀜
-        test.children[getIndex-1].style.color ='blue';
-      }
+      let order = Number(event.target.dataset.order);
+      // 데이터 자료 형변환 --> 문자열 --> 숫자로 바꾸는 개녕
+      // 숫자로 바꾸면 사칙연산이 가능하기 떄문
+
+      test.children[order-1].style.color = 'blue';
     });
 
   </script>
